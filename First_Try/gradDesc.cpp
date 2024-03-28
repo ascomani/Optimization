@@ -38,14 +38,14 @@ std::vector<int> shapeofVec(std::vector<std::vector<double>> &matrix){
 std::vector<std::vector<double>> generateY(const std::vector<std::vector<double>> &x){
     std::vector<std::vector<double>> y(x.size(), std::vector<double>(x[0].size()));
 
-    //std::random_device rd;
-    //std::mt19937 gen(rd());
-    //std::normal_distribution<double> distribution(0.0, 1.0);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::normal_distribution<double> distribution(0.0, 1.0);
 
     for(size_t i=0; i<x.size(); ++i){
         for(size_t j=0; j<x[i].size(); ++j){
-            //double noise = distribution(gen);
-            y[i][j] = 4 * x[i][j]; //+ noise;
+            double noise = distribution(gen);
+            y[i][j] = 4 * x[i][j] + noise;
         }
     }
 
@@ -135,7 +135,7 @@ int main(){
     double prev_loss = std::numeric_limits<double>::infinity();
 
 
-    for(int epoch=0; epoch<800; ++epoch){
+    for(int epoch=0; epoch<401; ++epoch){
         //Update weights and bias using the gradient descent function
         std::pair<double, double> updatedParams = descend(x, y, w, b, learning_rate);
         w = updatedParams.first;
