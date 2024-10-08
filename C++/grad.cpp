@@ -53,12 +53,6 @@ int main(){
         }
     }
 
-    // for(size_t i=0; i<y.size(); i++){
-    //     for(size_t j=0; j<y[i].size(); j++){
-    //         std::cout<<"x: ["<<x[i][j]<<"] "<<"y: ["<<y[i][j]<<"]"<<std::endl;
-    //     }
-    // }
-
     double w = 0.0;
     double b = 0.0;
 
