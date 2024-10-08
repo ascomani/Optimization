@@ -11,6 +11,7 @@ b = 0.0
 # Hyperparameter 
 learning_rate = 0.01
 
+
 # Create gradient descent function
 def descend(x, y, w, b, learning_rate): 
     dldw = 0.0 
@@ -25,6 +26,7 @@ def descend(x, y, w, b, learning_rate):
     w = w - learning_rate*(1/N)*dldw
     b = b - learning_rate*(1/N)*dldb
     return w, b 
+
 
 # Iteratively make updates
 for epoch in range(800): 
